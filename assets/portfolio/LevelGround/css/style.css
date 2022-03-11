@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Box Model Hack */
 * {
   box-sizing: border-box;
@@ -288,7 +287,6 @@ img#lg {
 img#LG {
   width: 40px;
 }
-=======
 /* Box Model Hack */
 * {
   box-sizing: border-box;
@@ -578,4 +576,3 @@ img#lg {
 img#LG {
   width: 40px;
 }
->>>>>>> 1400e3216abd935ff96c17fc2a444e89905a74fc
