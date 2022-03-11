@@ -1,2 +1,12 @@
 # Local Netlify folder
 .netlify
+
+#Local GitIgnore File
+.gitignore
+#not sure
+.DS_Store
+
+
+# VSC workspace
+NicLedoux.com.code-workspace
+
