@@ -1,0 +1,396 @@
+/*
+
+                  CSS Reset
+
+                  */
+
+/*
+                    1. Use a more-intuitive box-sizing model.
+                  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+                    2. Remove default margin
+                  */
+* {
+  margin: 0px;
+}
+
+/*
+                    3. Allow percentage-based heights in the application
+                  */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: auto;
+  background-color: #f3f3f3;
+}
+
+/*
+                    Typographic tweaks!
+                    4. Add accessible line-height
+                    5. Improve text rendering
+                  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+                    6. Improve media defaults
+                  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+/*
+                    7. Remove built-in form typography styles
+                  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+                    8. Avoid text overflows
+                  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+                    9. Create a root stacking context
+                  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+
+                  End CSS Reset
+
+                  */
+
+/*
+                  Shadow sets
+                  */
+
+/*
+                  End Shadow Set
+                  */
+
+h2 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.fwheadertr {
+  margin: unset;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  max-width: 600px;
+  width: 600px !important;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: #335959;
+  text-align: center;
+}
+
+.centertable {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  max-width: 650px;
+  padding: 10px;
+  box-shadow: 0 8px 10px -5px rgb(0 0 0 / 16%), 0 16px 24px 2px rgb(0 0 0 / 11%),
+    0 6px 30px 5px rgb(0 0 0 / 10%);
+}
+
+.imghover:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 2px 40px var(--clr-gray-light);
+}
+.articleblock {
+  transition: 250ms all ease-in-out;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+.articleblock:hover {
+  transform: scale(1.05);
+  background-color: #74747434;
+}
+
+.articletitle {
+  color: #335959 !important;
+  font-size: 16px;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+div.articletitle:hover {
+  color: #912123 !important;
+  font-size: 16px;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+.imghover {
+  transition: 250ms all ease-in-out;
+  cursor: pointer;
+}
+
+.imgshadow {
+  box-shadow: 0 2px 4px -1px rgb(0 0 0 / 16%), 0 4px 5px 0 rgb(0 0 0 / 11%),
+    0 1px 10px 0 rgb(0 0 0 / 10%);
+  display: block;
+}
+
+.imgzoom {
+  transition: 250ms all ease-in-out;
+  cursor: pointer;
+  margin: auto;
+}
+
+.imgzoom:hover {
+  transform: scale(1.15);
+  box-shadow: 0px 2px 40px var(--clr-gray-light);
+}
+
+/* Main Button */
+.newbutton {
+  border-radius: 2px;
+}
+
+.newbutton a {
+  padding: 8px 12px;
+  border: 1px solid #912123;
+  border-radius: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+:root {
+  --clr-gray-light: #d7dfe2;
+  --clr-gray-med: #616b74;
+  --clr-gray-dark: #414b56;
+  --clr-link: #4d97b2;
+  --clr-featured: #335959;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--clr-gray-dark);
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0px 2px 20px var(--clr-gray-light);
+  background: #fff;
+  border-radius: 0.5rem;
+  position: relative;
+  width: 625px;
+  margin: 1rem;
+  transition: 250ms all ease-in-out;
+  cursor: pointer;
+  margin: auto;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 2px 40px var(--clr-gray-light);
+}
+
+.imagecard {
+  box-shadow: 0px 2px 20px var(--clr-gray-light);
+  border-radius: 0.5rem;
+  width: 600px;
+  transition: 250ms all ease-in-out;
+  cursor: pointer;
+  margin-left: 15px;
+  background: #fff;
+}
+
+.imagecard:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 2px 40px var(--clr-gray-light);
+}
+
+.banner-img {
+  position: absolute;
+  object-fit: cover;
+  height: 14.5rem;
+  width: 100%;
+}
+
+.category-tag {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  background: red;
+  padding: 0.5rem 1.3rem 0.5rem 1rem;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  border-radius: 0 2rem 2rem 0;
+}
+
+.featured {
+  background: var(--clr-featured);
+}
+
+.card-body {
+  margin: 15rem 1rem 1rem 1rem;
+}
+
+.blog-title {
+  line-height: 1.5rem;
+  margin: 1rem 0 0.5rem;
+  text-align: left;
+  color: #912123;
+  font-family: Futura, Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.blog-description {
+  color: var(--clr-gray-med);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/*
+            Hover Image Zoon
+            */
+
+/* [1] The container */
+.img-hover-zoom {
+  height: 325px;
+  /* [1.1] Set it as per your need */
+  width: 600px;
+  overflow: hidden;
+  /* [1.2] Hide the overflowing of child elements */
+  box-shadow: 0px 2px 40px var(--clr-gray-light);
+  padding: 0px;
+  margin: auto;
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  transform: scale(1.04);
+}
+
+/*
+            Side Buttons
+            */
+
+.sidebuttons {
+  display: block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  width: 185px;
+  line-height: 34px;
+  font-size: 12px;
+  color: #ffffff;
+  background-color: #95cdc6;
+  transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+  margin: auto;
+  padding: 0px;
+}
+
+.sidebuttons:hover {
+  color: #ffffff;
+  background-color: #006570;
+  margin: auto;
+}
+
+.sidebuttons a:hover {
+  color: #ffffff;
+  background-color: #006570;
+  margin: auto;
+}
+
+.sidebuttons a {
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  margin: auto;
+  padding: 0px;
+  padding: 0 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.shadowp {
+  box-shadow: 0px 2px 40px var(--clr-gray-light);
+  text-decoration: none !important;
+}
+
+.shadowp:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 2px 40px var(--clr-gray-light);
+}
+
+.ap {
+  text-decoration: none !important;
+  color: var(--clr-gray-dark) !important;
+}
