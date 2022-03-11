@@ -5,7 +5,7 @@
 .gitignore
 #not sure
 .DS_Store
-
+*.DS_Store
 
 # VSC workspace
 NicLedoux.com.code-workspace
