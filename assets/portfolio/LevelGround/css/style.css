@@ -268,3 +268,19 @@ footer > section + section + section + section span + img {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+#lg {
+  width: 35px;
+}
+
+#fb {
+  width: 35px;
+}
+
+#em {
+  width: 35px;
+}
+
+#tw {
+  width: 35px;
+}
