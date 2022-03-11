@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Box Model Hack */
 * {
   box-sizing: border-box;
@@ -287,3 +288,294 @@ img#lg {
 img#LG {
   width: 40px;
 }
+=======
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  text-align: center;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+  background: rgb(106, 118, 136);
+  color: white;
+  height: 55px;
+  width: 100%;
+  float: left;
+  padding: 10px;
+  clear: both;
+  display: block;
+  text-transform: uppercase;
+}
+
+nav > * {
+  font-size: 1.25em;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+header > nav ul {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+header > nav ul li {
+  float: left;
+  margin: 0 5%;
+}
+
+nav section {
+  float: left;
+  width: 33.333%;
+}
+
+nav > section + section + section {
+  text-align: right;
+  padding: 20px;
+}
+
+nav > section + section + section a {
+  padding: 20px;
+  margin-right: 20px;
+  border-radius: 15px;
+  background: white;
+  color: rgb(106, 118, 136);
+}
+
+main {
+  padding: 100px 250px;
+  background: rgb(106, 118, 136);
+  color: white;
+  height: 700px;
+}
+main > * {
+  display: block;
+}
+main > h1 {
+  text-transform: uppercase;
+  font-size: 2.5em;
+}
+
+main > h1 + p {
+  font-size: 2em;
+}
+
+main > h1 + p + a {
+  text-decoration: none;
+  font-size: 2em;
+  color: white;
+}
+
+main > h1 + p + a + span {
+  color: black;
+  padding-top: 30px;
+  font-style: italic;
+  font-size: large;
+}
+
+main + section {
+  padding: 100px 250px;
+}
+
+main + section > h2 {
+  text-transform: uppercase;
+  font-size: 2.5em;
+  color: black;
+}
+
+main + section > h2 + p {
+  font-size: 2em;
+  color: black;
+}
+
+#container {
+  padding: 100px 200px;
+  height: 700px;
+  width: 100%;
+  background: rgb(220, 223, 226);
+}
+
+section.Zebra {
+  width: 50%;
+  float: left;
+  padding: 10px;
+}
+
+section.Zebra img {
+  border: 1px solid rgb(106, 118, 136);
+  width: 250px;
+  height: 150px;
+  background: rgb(106, 118, 136);
+}
+
+.Zebra img + h3 {
+  text-transform: uppercase;
+  font-size: 1.25em;
+}
+.Zebra img + h3 + p {
+  font-size: 1.5em;
+  padding-bottom: 20px;
+}
+
+section.Zebra > img + h3 + p + a {
+  text-decoration: none;
+  padding: 10px 30px;
+  color: black;
+  font-size: 1.25em;
+  border: 1px solid rgb(106, 118, 136);
+}
+
+section#container + section {
+  background: white;
+  padding: 100px 250px;
+  color: black;
+  height: 700px;
+  text-decoration: none;
+}
+
+section#container + section h2 {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+section#container + section h2 + p {
+  font-size: 2em;
+  padding-bottom: 20px;
+}
+
+section#container + section h2 + p + a {
+  text-decoration: none;
+  padding: 10px 30px;
+  color: black;
+  font-size: 1.25em;
+  border: 1px solid rgb(106, 118, 136);
+}
+
+footer {
+  background: rgb(24, 31, 41);
+  height: 300px;
+}
+
+footer section {
+  width: 25%;
+  height: 200px;
+  display: block;
+  float: left;
+  padding: 20px;
+}
+
+footer > section + section {
+  width: 50%;
+}
+
+footer > section ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+footer > section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+footer > section ul > h5 {
+  color: rgb(106, 118, 136);
+  text-align: left;
+  font-size: 1.25em;
+  padding-top: 20px;
+  display: block;
+  clear: both;
+  margin: 10px;
+}
+
+footer > section ul li {
+  margin-right: 40px;
+  display: block;
+  float: left;
+  font-size: 1.15em;
+}
+
+footer > section + section + section {
+  padding: 20px;
+  color: white;
+  text-align: left;
+  width: 25%;
+}
+
+footer > section + section + section h5 {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  margin: 0;
+}
+
+address {
+  font-size: 1.25em;
+  padding: 20px 0;
+  font-style: normal;
+  color: lightgray;
+}
+
+address a {
+  text-decoration: none;
+  color: white;
+}
+
+footer > section + section + section + section {
+  width: 100%;
+  float: left;
+}
+footer > section + section + section + section span + img {
+  float: right;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+img#fb {
+  width: 40px;
+}
+
+img#tw {
+  width: 40px;
+}
+
+img#em {
+  width: 40px;
+}
+
+img#lg {
+  width: 60px;
+}
+
+img#LG {
+  width: 40px;
+}
+>>>>>>> 1400e3216abd935ff96c17fc2a444e89905a74fc
