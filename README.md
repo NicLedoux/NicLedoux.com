@@ -1,5 +1,5 @@
 # NicLedoux.com
- This us my portfolio website
+ This is my portfolio website
 
 👋 Hi, I’m @NicLedoux
 
