@@ -2288,7 +2288,8 @@ dl {
 ul.icons {
   cursor: default;
   list-style: none;
-  padding-left: 0;
+  padding-left: 10em;
+  position: static;
 }
 
 ul.icons li {
@@ -3188,7 +3189,9 @@ body.is-touch .poptrox-popup .closer {
   #footer {
     background-attachment: scroll;
     background-color: #8ecae6;
-
+    background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+    background-position: top left, bottom center;
+    background-repeat: repeat, no-repeat;
     background-size: auto, cover;
     bottom: auto;
     left: auto;
@@ -3324,7 +3327,7 @@ body.is-touch .poptrox-popup .closer {
   }
 }
 img.coverLogo {
-  width: 50%;
+  width: 30%;
 }
 .hidden {
   display: none;
