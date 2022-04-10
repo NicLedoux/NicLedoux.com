@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="This is where your description goes" />
+    <meta name="keywords" content="one, two, three" />
+
+    <title>Cocktail Search</title>
+
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Cocktail Recipes</h1>
+        <h4>Search for your favorite cocktail.</h4>
+        <div id="search">
+          <input
+            type="text"
+            id="cocktailSearch"
+            name="cocktailSearch"
+            placeholder="Cocktail"
+            value=""
+          />
+          <button type="submit" name="button">Search</button>
+        </div>
+      </section>
+      <section>
+        <h2 class="hidden"></h2>
+        <h5 class="hidden"></h5>
+        <!-- <a href="#" class="hidden">Next</a> -->
+        <img class="hidden" src="" alt="" />
+
+        <h3 class="hidden ingredients">Ingredients</h3>
+        <div id="list"></div>
+        <h3 class="hidden instructions">Instructions</h3>
+        <p class="hidden"></p>
+
+        <h3 class="hidden video">Video</h3>
+        <iframe
+          class="iframe hidden"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </section>
+    </main>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
