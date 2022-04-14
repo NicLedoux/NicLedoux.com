@@ -11,26 +11,45 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body onload="getFetch()">
+  <body onload="todaysPic()">
     <script>
+      function todaysPic() {
       fetch(
         "https://api.nasa.gov/planetary/apod?api_key=EbqV3DuusLFCylIAoYWB9jeekfGJm4xitpvCA2u7"
       )
         .then((res) => res.json()) // parse response as JSON
         .then((data) => {
           console.log(data);
-          document.getElementById("displayDate").innerText = new Date().toLocaleDateString('en-US')
-          if (data.media_type === "image") {
-            document.querySelector("a").href = data.hdurl;
-            document.querySelector("img").src = data.url;
-          } else if (data.media_type === "video") {
-            document.querySelector("iframe").src = data.url;
-          }
+           document.getElementById("title").innerText = data.title;
+          document.getElementById("displayDate").innerText = new Date().toLocaleDateString('en-US');
+           if (data.media_type === "image") {
+        document.querySelector("img").classList.remove("hidden");
+        document.querySelector("a").classList.remove("hidden");
+        document.querySelector("a").href = data.hdurl;
+        document.querySelector("img").src = data.url;
+        document.querySelector("iframe").classList.add("hidden");
+      } else if (data.media_type === "video") {
+        document.querySelector("img").classList.add("hidden");
+        document.querySelector("iframe").classList.remove("hidden");
+        document.querySelector("iframe").src = data.url;
+        document.querySelector("a").classList.add("hidden");
+        document.querySelector("small").classList.add("hidden");
+      }
           document.querySelector("p").innerText = data.explanation;
+      if (data.copyright != null && data.media_type === "image") {
+        document.querySelector("small").classList.remove("hidden");
+        let copyright = data.copyright;
+        document.querySelector("small").innerText = `Photo by ${copyright}`;
+      } else if (data.copyright != null && data.media_type === "video") {
+        document.querySelector("small").classList.remove("hidden");
+        let copyright = data.copyright;
+        document.querySelector("small").innerText = `Video by ${copyright}`;
+      }
         })
         .catch((err) => {
           console.log(`error ${err}`);
         });
+      }
     </script>
     <main>
       <section>
@@ -39,8 +58,8 @@
         <h2 id="title">Title</h2>
 		</section>
         <a href="#"><img src="img/spiralGalaxy.jpg" alt="" id="apod"/></a>
-		
-		<iframe allow="fullscreen" class="iframe" src="" frameborder="0" class="hidden"></iframe>
+		<div id="iframeContainer" class="hidden">
+		<iframe allow="fullscreen" class="iframe" src="" frameborder="0" class="hidden"></iframe></div>
 		<small class="hidden"></small>
         <p>&nbsp;</p>
         
