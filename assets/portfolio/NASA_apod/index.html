@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="This is where your description goes" />
+    <meta name="keywords" content="one, two, three" />
+
+    <title>NASA Picture of the Day</title>
+
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body onload="getFetch()">
+    <script>
+      fetch(
+        "https://api.nasa.gov/planetary/apod?api_key=EbqV3DuusLFCylIAoYWB9jeekfGJm4xitpvCA2u7"
+      )
+        .then((res) => res.json()) // parse response as JSON
+        .then((data) => {
+          console.log(data);
+          document.getElementById("displayDate").innerText = new Date().toLocaleDateString('en-US')
+          if (data.media_type === "image") {
+            document.querySelector("a").href = data.hdurl;
+            document.querySelector("img").src = data.url;
+          } else if (data.media_type === "video") {
+            document.querySelector("iframe").src = data.url;
+          }
+          document.querySelector("p").innerText = data.explanation;
+        })
+        .catch((err) => {
+          console.log(`error ${err}`);
+        });
+    </script>
+    <main>
+      <section>
+		  <h2>NASA's Picture of the Day!</h2>
+        <h1 id="displayDate"></h1>
+        <h2 id="title">Title</h2>
+		</section>
+        <a href="#"><img src="img/spiralGalaxy.jpg" alt="" id="apod"/></a>
+		
+		<iframe allow="fullscreen" class="iframe" src="" frameborder="0" class="hidden"></iframe>
+		<small class="hidden"></small>
+        <p>&nbsp;</p>
+        
+      </section>
+	  <section>
+		  <h3>Pick a date to see more:</h3>
+	  <input type="date" name="" id="datePicker" value="" />
+        <button type="button" name="button">Get Picture</button>
+
+        
+		</section>
+    </main>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
