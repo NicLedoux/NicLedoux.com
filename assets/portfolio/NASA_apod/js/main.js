@@ -1,13 +1,6 @@
 //Example fetch using pokemonapi.co
 document.querySelector("button").addEventListener("click", getFetch);
 
-//Press enter to searhc instead of clicking button
-input.addEventListener("keyup", function (e) {
-  if (e.key === "Enter") {
-    getFetch();
-  }
-});
-
 function getFetch() {
   const choice = document.querySelector("input").value;
   console.log(choice);
