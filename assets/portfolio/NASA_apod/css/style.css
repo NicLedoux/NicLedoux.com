@@ -75,6 +75,7 @@ img {
   display: block;
   margin: 0 auto;
   max-width: 31.25rem;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,9 +175,8 @@ h2 {
 }
 
 h3 {
-  margin: 0 auto;
-  padding: 20 0;
-  display: block;
+  margin: auto;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px 0;
@@ -254,6 +254,17 @@ p {
 
 /* Media Queries */
 
+@media screen and (max-width: 177px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+@media (min-width: 178px) and (max-width: 264px) {
+  html {
+    font-size: 8px;
+  }
+}
 @media (min-width: 265px) and (max-width: 450px) {
   html {
     font-size: 12px;
@@ -265,26 +276,32 @@ p {
   }
 }
 
-@media (min-width: 220px) and (max-width: 266px) {
+@media (min-width: 451px) and (max-width: 549px) {
   html {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 
-@media (min-width: 177px) and (max-width: 219px) {
+@media (min-width: 550px) and (max-width: 600px) {
   html {
-    font-size: 8px;
+    font-size: 14px;
   }
 }
 
-@media screen and (max-width: 177px) {
+@media (min-width: 1000px) and (max-width: 1300px) {
   html {
-    font-size: 6px;
+    font-size: 18px;
   }
 }
 
-@media (min-width: 1200px) and (max-width: 2000px) {
+@media (min-width: 1301px) and (max-width: 1599px) {
   html {
-    font-size: 28px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 2000px) {
+  html {
+    font-size: 22px;
   }
 }
