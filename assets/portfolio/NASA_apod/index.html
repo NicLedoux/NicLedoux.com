@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="This is where your description goes" />
-    <meta name="keywords" content="one, two, three" />
-
+    <meta name="description" content="NASA Picture of the Day" />
+    <meta name="keywords" content="NASA, Picture-of-the-Day, Space, API, Picture, Day, HTML, CSS, JavaScript" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NASA Picture of the Day</title>
 
     <!-- external CSS link -->
@@ -20,6 +21,7 @@
         .then((res) => res.json()) // parse response as JSON
         .then((data) => {
           console.log(data);
+          document.getElementById('datePicker').valueAsDate = new Date();
            document.getElementById("title").innerText = data.title;
           document.getElementById("displayDate").innerText = new Date().toLocaleDateString('en-US');
            if (data.media_type === "image") {
@@ -66,7 +68,7 @@
       </section>
 	  <section>
 		  <h3>Pick a date to see more:</h3>
-	  <input type="date" name="" id="datePicker" value="" />
+	  <input type="date" name="" id="datePicker" value="" placeholder=""/>
         <button type="button" name="button">Get Picture</button>
 
         
