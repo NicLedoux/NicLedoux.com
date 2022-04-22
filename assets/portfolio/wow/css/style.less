@@ -1,0 +1,163 @@
+html {
+  font-size: 16px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.wow {
+  border: 2px solid #f2f2f2;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &-content {
+    padding: 16px 32px;
+    flex: 4 1 40ch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-tags {
+    margin: auto;
+    display: block;
+  }
+
+  &-tag {
+    display: inline-block;
+    margin: 8px;
+    font-size: 0.875em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--primary);
+  }
+
+  &-title {
+    margin: auto;
+    font-size: 2.1em;
+    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  &-random {
+    display: flex;
+    align-items: center;
+    padding: 6px 14px 6px 12px;
+    border-radius: 4px;
+    border: 2px solid currentColor;
+    color: var(--primary);
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin: auto;
+    text-transform: uppercase;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  max-width: 50%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+small {
+  font-size: 0.7rem;
+  text-align: center;
+}
+.border {
+  border: 2px solid #fafafa;
+}
+
+span#released {
+  font-size: 0.5em;
+  margin: auto;
+  text-align: center;
+  margin: auto;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+}
+/* Body Layout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --primary: #e05d26;
+  --grey: #454545;
+  --lightgrey: #666;
+
+  color: var(--grey);
+  line-height: 1.55;
+  display: flex;
+  background-color: #fafafa;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.card {
+  width: 95%;
+  padding: 24px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs`
+
+// Small devices (landscape phones, 660px and up)
+@media (min-width: 761px) {
+  html {
+    font-size: 16px;
+  }
+  img#moviePoster {
+    max-width: 300px;
+    margin: 0;
+    padding-right: 10px;
+  }
+
+  small {
+    font-size: 1rem;
+    margin: auto;
+    text-align: center;
+  }
+
+  span#released {
+    font-size: 1em;
+  }
+
+  .wow {
+    flex-direction: row;
+  }
+  .card {
+    max-width: 80rem;
+    width: 95%;
+    padding: 24px;
+    margin: auto;
+  }
+}
