@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="This web app generates a random wow from
+    an Owen Wilson movie"
+    />
+    <meta
+      name="keywords"
+      content="Wow, Owen, Wilson, audio, Owen Wilson, WOW,"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Owen Wilson's Wow</title>
+
+    <!-- external CSS link -->
+    <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="img/favicon-48x48.png"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+  </head>
+  <body>
+    <main>
+      <p class="wow-tags">
+        <span class="wow-tag">Random Wow from Owen Wilson</span>
+      </p>
+      <div class="card">
+        <article class="wow">
+          <img
+            src="img/wow.png"
+            alt="Movie Poster"
+            id="moviePoster"
+            class="border"
+          />
+
+          <div class="wow-content">
+            <h1 class="wow-title hidden">Movie Title</h1>
+            <span id="released" class="hidden releasedOn">
+              Released on <span id="releaseDate"></span
+            ></span>
+            <section>
+              <p id="webAppDesc">
+                This is a web app that retrieves a random "Wow!" from an Owen
+                Wilson movie. Just click the button below and make sure your
+                volume is up.
+              </p>
+              <p id="movie-desc" class="hidden">
+                At <span id="timestamp"></span>, <span id="char"></span> (played
+                by Owen Wilson) says "<span id="full_line"></span>" He says wow
+                a total of <span id="wowCount"></span> times in this movie. This
+                is wow number <span id="wowCurrent"></span>.
+              </p>
+            </section>
+            <button class="wow-random" type="button">Wow Me</button>
+            <div id="audioDiv"></div>
+          </div>
+        </article>
+      </div>
+      <small
+        >This web app uses the
+        <a href="https://owen-wilson-wow-api.herokuapp.com/"
+          >Owen Wilson Wow API</a
+        >
+        created by Avi Mamenko</small
+      >
+    </main>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

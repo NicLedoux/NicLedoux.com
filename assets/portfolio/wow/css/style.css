@@ -1,0 +1,182 @@
+html {
+  font-size: 16px;
+}
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.wow {
+  border: 2px solid #f2f2f2;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wow-content {
+  padding: 16px 32px;
+  -webkit-box-flex: 4;
+      -ms-flex: 4 1 40ch;
+          flex: 4 1 40ch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wow-tags {
+  margin: auto;
+  display: block;
+}
+.wow-tag {
+  display: inline-block;
+  margin: 8px;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+}
+.wow-title {
+  margin: auto;
+  font-size: 2.1em;
+  font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+.wow-title a {
+  text-decoration: none;
+  color: inherit;
+}
+.wow-random {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6px 14px 6px 12px;
+  border-radius: 4px;
+  border: 2px solid currentColor;
+  color: var(--primary);
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin: auto;
+  text-transform: uppercase;
+}
+.hidden {
+  display: none;
+}
+img {
+  max-width: 50%;
+  width: auto;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  margin: auto;
+}
+small {
+  font-size: 0.7rem;
+  text-align: center;
+}
+.border {
+  border: 2px solid #fafafa;
+}
+span#released {
+  font-size: 0.5em;
+  text-align: center;
+  margin: auto;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+}
+/* Body Layout */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  --primary: #e05d26;
+  --grey: #454545;
+  --lightgrey: #666;
+  color: var(--grey);
+  line-height: 1.55;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fafafa;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+.card {
+  width: 95%;
+  padding: 24px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 761px) {
+  html {
+    font-size: 16px;
+  }
+  img#moviePoster {
+    max-width: 300px;
+    margin: 0;
+    padding-right: 10px;
+  }
+  small {
+    font-size: 1rem;
+    margin: auto;
+    text-align: center;
+  }
+  span#released {
+    font-size: 1em;
+  }
+  .wow {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .card {
+    max-width: 80rem;
+    width: 95%;
+    padding: 24px;
+    margin: auto;
+  }
+}
