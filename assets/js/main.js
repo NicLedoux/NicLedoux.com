@@ -1,251 +1,123 @@
-<<<<<<< HEAD
 /*
-	Strata by HTML5 UP
+	Prologue by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function ($) {
-  var $window = $(window),
-    $body = $("body"),
-    $header = $("#header"),
-    $footer = $("#footer"),
-    $main = $("#main"),
-    settings = {
-      // Parallax background effect?
-      parallax: true,
+(function($) {
 
-      // Parallax factor (lower = more intense, higher = less intense).
-      parallaxFactor: 20,
-    };
+	var	$window = $(window),
+		$body = $('body'),
+		$nav = $('#nav');
 
-  // Breakpoints.
-  breakpoints({
-    xlarge: ["1281px", "1800px"],
-    large: ["981px", "1280px"],
-    medium: ["737px", "980px"],
-    small: ["481px", "736px"],
-    xsmall: [null, "480px"],
-  });
+	// Breakpoints.
+		breakpoints({
+			wide:      [ '961px',  '1880px' ],
+			normal:    [ '961px',  '1620px' ],
+			narrow:    [ '961px',  '1320px' ],
+			narrower:  [ '737px',  '960px'  ],
+			mobile:    [ null,     '736px'  ]
+		});
 
-  // Play initial animations on page load.
-  $window.on("load", function () {
-    window.setTimeout(function () {
-      $body.removeClass("is-preload");
-    }, 100);
-  });
+	// Play initial animations on page load.
+		$window.on('load', function() {
+			window.setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 100);
+		});
 
-  // Touch?
-  if (browser.mobile) {
-    // Turn on touch mode.
-    $body.addClass("is-touch");
+	// Nav.
+		var $nav_a = $nav.find('a');
 
-    // Height fix (mostly for iOS).
-    window.setTimeout(function () {
-      $window.scrollTop($window.scrollTop() + 1);
-    }, 0);
-  }
+		$nav_a
+			.addClass('scrolly')
+			.on('click', function(e) {
 
-  // Footer.
-  breakpoints.on("<=medium", function () {
-    $footer.insertAfter($main);
-  });
+				var $this = $(this);
 
-  breakpoints.on(">medium", function () {
-    $footer.appendTo($header);
-  });
+				// External link? Bail.
+					if ($this.attr('href').charAt(0) != '#')
+						return;
 
-  // Header.
+				// Prevent default.
+					e.preventDefault();
 
-  // Parallax background.
+				// Deactivate all links.
+					$nav_a.removeClass('active');
 
-  // Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
-  if (browser.name == "ie" || browser.mobile) settings.parallax = false;
+				// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
+					$this
+						.addClass('active')
+						.addClass('active-locked');
 
-  if (settings.parallax) {
-    breakpoints.on("<=medium", function () {
-      $window.off("scroll.strata_parallax");
-      $header.css("background-position", "");
-    });
+			})
+			.each(function() {
 
-    breakpoints.on(">medium", function () {
-      $header.css("background-position", "left 0px");
+				var	$this = $(this),
+					id = $this.attr('href'),
+					$section = $(id);
 
-      $window.on("scroll.strata_parallax", function () {
-        $header.css(
-          "background-position",
-          "left " +
-            -1 * (parseInt($window.scrollTop()) / settings.parallaxFactor) +
-            "px"
-        );
-      });
-    });
+				// No section for this link? Bail.
+					if ($section.length < 1)
+						return;
 
-    $window.on("load", function () {
-      $window.triggerHandler("scroll");
-    });
-  }
+				// Scrollex.
+					$section.scrollex({
+						mode: 'middle',
+						top: '-10vh',
+						bottom: '-10vh',
+						initialize: function() {
 
-  // Main Sections: Two.
+							// Deactivate section.
+								$section.addClass('inactive');
 
-  // Lightbox gallery.
-  $window.on("load", function () {
-    $("#three").poptrox({
-      caption: function ($a) {
-        return $a.next("h3").text();
-      },
-      overlayColor: "#2c2c2c",
-      overlayOpacity: 0.85,
-      popupCloserText: "",
-      popupLoaderText: "",
-      selector: ".work-item a.image",
-      usePopupCaption: true,
-      usePopupDefaultStyling: false,
-      usePopupEasyClose: false,
-      usePopupNav: true,
-      windowMargin: breakpoints.active("<=small") ? 0 : 50,
-    });
-  });
+						},
+						enter: function() {
+
+							// Activate section.
+								$section.removeClass('inactive');
+
+							// No locked links? Deactivate all links and activate this section's one.
+								if ($nav_a.filter('.active-locked').length == 0) {
+
+									$nav_a.removeClass('active');
+									$this.addClass('active');
+
+								}
+
+							// Otherwise, if this section's link is the one that's locked, unlock it.
+								else if ($this.hasClass('active-locked'))
+									$this.removeClass('active-locked');
+
+						}
+					});
+
+			});
+
+	// Scrolly.
+		$('.scrolly').scrolly();
+
+	// Header (narrower + mobile).
+
+		// Toggle.
+			$(
+				'<div id="headerToggle">' +
+					'<a href="#header" class="toggle"></a>' +
+				'</div>'
+			)
+				.appendTo($body);
+
+		// Header.
+			$('#header')
+				.panel({
+					delay: 500,
+					hideOnClick: true,
+					hideOnSwipe: true,
+					resetScroll: true,
+					resetForms: true,
+					side: 'left',
+					target: $body,
+					visibleClass: 'header-visible'
+				});
+
 })(jQuery);
-
-//hiden email
-
-exports.handler = async function () {
-  // hiding email from bots in repo
-  const names = { first: "NL", last: "15025100" };
-  const provider = "gmail.com";
-  const constructedEmail = `${Object.values(names).join("-")}@${provider}`;
-  return {
-    statusCode: 301,
-    headers: {
-      "Cache-control": "public, max-age=0, must-revalidate",
-      location: `mailto:${constructedEmail}`,
-    },
-  };
-};
-=======
-/*
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
-(function ($) {
-  var $window = $(window),
-    $body = $("body"),
-    $header = $("#header"),
-    $footer = $("#footer"),
-    $main = $("#main"),
-    settings = {
-      // Parallax background effect?
-      parallax: true,
-
-      // Parallax factor (lower = more intense, higher = less intense).
-      parallaxFactor: 20,
-    };
-
-  // Breakpoints.
-  breakpoints({
-    xlarge: ["1281px", "1800px"],
-    large: ["981px", "1280px"],
-    medium: ["737px", "980px"],
-    small: ["481px", "736px"],
-    xsmall: [null, "480px"],
-  });
-
-  // Play initial animations on page load.
-  $window.on("load", function () {
-    window.setTimeout(function () {
-      $body.removeClass("is-preload");
-    }, 100);
-  });
-
-  // Touch?
-  if (browser.mobile) {
-    // Turn on touch mode.
-    $body.addClass("is-touch");
-
-    // Height fix (mostly for iOS).
-    window.setTimeout(function () {
-      $window.scrollTop($window.scrollTop() + 1);
-    }, 0);
-  }
-
-  // Footer.
-  breakpoints.on("<=medium", function () {
-    $footer.insertAfter($main);
-  });
-
-  breakpoints.on(">medium", function () {
-    $footer.appendTo($header);
-  });
-
-  // Header.
-
-  // Parallax background.
-
-  // Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
-  if (browser.name == "ie" || browser.mobile) settings.parallax = false;
-
-  if (settings.parallax) {
-    breakpoints.on("<=medium", function () {
-      $window.off("scroll.strata_parallax");
-      $header.css("background-position", "");
-    });
-
-    breakpoints.on(">medium", function () {
-      $header.css("background-position", "left 0px");
-
-      $window.on("scroll.strata_parallax", function () {
-        $header.css(
-          "background-position",
-          "left " +
-            -1 * (parseInt($window.scrollTop()) / settings.parallaxFactor) +
-            "px"
-        );
-      });
-    });
-
-    $window.on("load", function () {
-      $window.triggerHandler("scroll");
-    });
-  }
-
-  // Main Sections: Two.
-
-  // Lightbox gallery.
-  $window.on("load", function () {
-    $("#three").poptrox({
-      caption: function ($a) {
-        return $a.next("h3").text();
-      },
-      overlayColor: "#2c2c2c",
-      overlayOpacity: 0.85,
-      popupCloserText: "",
-      popupLoaderText: "",
-      selector: ".work-item a.image",
-      usePopupCaption: true,
-      usePopupDefaultStyling: false,
-      usePopupEasyClose: false,
-      usePopupNav: true,
-      windowMargin: breakpoints.active("<=small") ? 0 : 50,
-    });
-  });
-})(jQuery);
-
-//hiden email
-
-exports.handler = async function () {
-  // hiding email from bots in repo
-  const names = { first: "NL", last: "15025100" };
-  const provider = "gmail.com";
-  const constructedEmail = `${Object.values(names).join("-")}@${provider}`;
-  return {
-    statusCode: 301,
-    headers: {
-      "Cache-control": "public, max-age=0, must-revalidate",
-      location: `mailto:${constructedEmail}`,
-    },
-  };
-};
->>>>>>> 1400e3216abd935ff96c17fc2a444e89905a74fc

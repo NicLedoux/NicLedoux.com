@@ -26,8 +26,21 @@
             console.log(data);
             document.getElementById("datePicker").valueAsDate = new Date();
             document.getElementById("title").innerText = data.title;
+
+            const date = new Date(data.date);
+            const dateOptions = {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            };
+
+            const formattedDate = date.toLocaleDateString("en-US", dateOptions);
+            console.log(formattedDate);
+
             document.getElementById("displayDate").innerText =
-              new Date().toLocaleDateString("en-US");
+              new Date().toLocaleDateString("en-US", dateOptions);
+
             if (data.media_type === "image") {
               document.querySelector("img").classList.remove("hidden");
               document.querySelector("a").classList.remove("hidden");
