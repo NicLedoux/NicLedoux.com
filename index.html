@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <!--
-	Strata by HTML5 UP
+	Prologue by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
   <head>
-    <title>Nic Ledoux's Portfolio</title>
+    <title>Nic Ledoux's Portfolio Page</title>
     <meta charset="utf-8" />
-    <meta name="description" content="Nic Ledoux's Portfolio" />
     <meta
-      name="keywords"
-      content="Software Engineer, Full Stack Web Developer, Web, Developer, API, Photography, HTML, CSS, JavaScript"
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <script
       src="https://kit.fontawesome.com/f4a872b0d9.js"
@@ -49,397 +46,300 @@
   </head>
   <body class="is-preload">
     <!-- Header -->
-    <header id="header">
-      <div class="inner">
-        <a href="index.html#messageMe" class="image avatar"
-          ><img src="images/NicMemoji.jpg" alt=""
-        /></a>
-        <h1>
-          <strong>I'm Nic</strong>, a software engineer.<br />
-          I build beautiful and responsive websites using HTML, CSS and
-          Javascript.
-        </h1>
+    <div id="header">
+      <div class="top">
+        <!-- Logo -->
+        <div id="logo">
+          <span class="image avatar48"
+            ><img src="images/avatar.jpg" alt="Nic Ledoux"
+          /></span>
+          <h1 id="title">Nic Ledoux</h1>
+          <p>Software Engineer</p>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            <li>
+              <a href="#top" id="top-link"
+                ><span class="icon solid fa-home">Intro</span></a
+              >
+            </li>
+            <li>
+              <a href="#portfolio" id="portfolio-link"
+                ><span class="icon solid fa-th">Portfolio</span></a
+              >
+            </li>
+            <li>
+              <a href="#about" id="about-link"
+                ><span class="icon solid fa-user">About Me</span></a
+              >
+            </li>
+
+            <li>
+              <a href="#contact" id="contact-link"
+                ><span class="icon solid fa-envelope">Contact</span></a
+              >
+            </li>
+            <!-- <li>
+              <a href="#top" id="contact-link"
+                ><span class="icon solid fa-blog">Blog</span></a
+              >
+            </li> -->
+          </ul>
+        </nav>
       </div>
-    </header>
 
-    <!-- Main -->
-    <div id="main">
-      <!-- One -->
-      <section id="one">
-        <header class="major">
-          <h2>Welcome to My Portfolio Website<br /></h2>
-        </header>
-        <p>
-          Here you will find a collection of my web designs, apps, projects,
-          photography and more.
-        </p>
-      </section>
-
-      <!-- Two -->
-      <section id="two">
-        <h2>Recent Work</h2>
-        <div class="row">
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="assets/portfolio/Photography/" class="image fit thumb"
-              ><img
-                src="images/thumbs/photography.jpg"
-                alt="Landscape Photography WebApp Thumb"
-            /></a>
-            <h3>Landscape Photography Wall</h3>
-            <p>
-              A Web App that pulls random landscape photos from unsplash. It
-              heavily uses flex for responsiveness and javascript to set element
-              attributes linking back to the photographer.
-            </p>
-          </article>
-
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="assets/portfolio/wow/index.html" class="image fit thumb"
-              ><img src="images/thumbs/Wow_Thumb.jpg" alt="Wow Web App Thumb"
-            /></a>
-            <h3>Wow!</h3>
-            <p>
-              A Web App I put together that generates a card with randomly info
-              on Owen Wilson saying "Wow!" in one of his movies.
-            </p>
-          </article>
-
-          <article class="col-6 col-12-xsmall work-item">
-            <a
-              href="assets/portfolio/NASA_apod/index.html"
-              class="image fit thumb"
-              ><img
-                src="images/thumbs/NASA_apod.jpg"
-                alt="NASA Picture of the Day Web App Thumb"
-            /></a>
-            <h3>NASA Picture of the Day</h3>
-            <p>
-              Another Web App that shows you NASA's picture of the day. You can
-              also choose a date to query other pictures from the database.
-            </p>
-          </article>
-
-          <article class="col-6 col-12-xsmall work-item">
-            <a
-              href="assets/portfolio/CocktailSearchApp/index.html"
-              class="image fit thumb"
-              ><img
-                src="images/thumbs/cocktailSearch.jpg"
-                alt="Cocktail Search Web App Thumb"
-            /></a>
-            <h3>Cocktail Search Web App</h3>
-            <p>
-              A Web App I designed based on the cocktailDB API. Seearch for your
-              favorite cocktail recipe. Includes image, igredients, instructions
-              and a video (if present on database).
-            </p>
-          </article>
-
-          <article class="col-6 col-12-xsmall work-item">
-            <a
-              href="assets/portfolio/FurnitureWorld/index.html"
-              class="image fit thumb"
-              ><img
-                src="images/thumbs/furninfo.jpg"
-                alt="Furniture World Digital Issue Email Thumb"
-            /></a>
-            <h3>Furniture World Digital Issue Emailer</h3>
-            <p>
-              Originally meant to be sent as an email, I converted this into a
-              landing page to view their digital issue.
-            </p>
-          </article>
-
-          <article class="col-6 col-12-xsmall work-item">
-            <a
-              href="assets/portfolio/LevelGround/index.html"
-              class="image fit thumb"
-              ><img src="images/thumbs/LevelGround.jpg" alt=""
-            /></a>
-            <h3>LevelGround Wireframe</h3>
-            <p>
-              I coded the Level Ground wireframe from Figma using only floats,
-              no flexbox or grid.
-            </p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a
-              href="https://www.codewars.com/users/NicLedoux"
-              class="image fit thumb"
-              ><img src="images/thumbs/CodeWars.jpg" alt=""
-            /></a>
-            <h3>CodeWars Challenges</h3>
-            <p>My github repository of all my CodeWars Kata solutions</p>
-          </article>
-        </div>
-        <!-- <ul class="actions">
-          <li><a href="#" class="button">Full Portfolio</a></li>
-        </ul> -->
-      </section>
-
-      <section id="three">
-        <h2>Photography</h2>
-        <div class="row">
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/1.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/1.jpg" alt=""
-            /></a>
-            <h3>Humphrey's Peak Sunrise</h3>
-            <p>
-              A view of the San Fransisco Mountains from Lake Mary, Flagstaff.
-            </p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/2.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/2.jpg" alt=""
-            /></a>
-            <h3>Mesa Arch Sunrise</h3>
-            <p>Sunrise from Mesa Arch in Canyonlands National Park, Utah.</p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/3.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/3.jpg" alt=""
-            /></a>
-            <h3>After the Storm</h3>
-            <p>
-              A storm rolled through Petrified Forest National Park, Arizona.
-            </p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/4.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/4.jpg" alt=""
-            /></a>
-            <h3>Otter Cliff from Boulder Beach</h3>
-            <p>
-              A view of Otter Cliff from Boulder Beach, Acadia National Park,
-              Maine
-            </p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/5.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/5.jpg" alt=""
-            /></a>
-            <h3>Lunch Break</h3>
-            <p>
-              A squirrel takes a lunch break with a view. Grand Canyon, Arizona
-            </p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/6.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/6.jpg" alt=""
-            /></a>
-            <h3>Portland Head Lighthouse</h3>
-            <p>The famous lighthouse in Portland, Maine</p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/7.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/7.jpg" alt=""
-            /></a>
-            <h3>Mt St Helens at Night</h3>
-            <p>A view of the famous volcano in the dead of night.</p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/8.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/8.jpg" alt=""
-            /></a>
-            <h3>Colorado River</h3>
-            <p>
-              The Colorado River flows through Dead Horse Point State Park, Utah
-            </p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/9.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/9.jpg" alt=""
-            /></a>
-            <h3>Mt St Helens at Sunrise</h3>
-            <p>Another view of the volcano, decades post eruption.</p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/10.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/10.jpg" alt=""
-            /></a>
-            <h3>Misty Mount Hood</h3>
-            <p>A view of Mt Hood during sunrise from Lost Lake</p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/11.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/11.jpg" alt=""
-            /></a>
-            <h3>Comet NEOWISE At Sunrise</h3>
-            <p>A view of Comet NEOWISE from Coconino National Forest.</p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/12.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/12.jpg" alt=""
-            /></a>
-            <h3>Aspens at Brazos Cliff</h3>
-            <p>Aspens changing colors at Brazos Cliff, New Mexico.</p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/13.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/13.jpg" alt=""
-            /></a>
-            <h3>Fresh Snow</h3>
-            <p>Fresh snow on the pines at Emerald Lake, Brittish Columbia</p>
-          </article>
-          <article class="col-6 col-12-xsmall work-item">
-            <a href="images/fulls/14.jpg" class="image fit thumb"
-              ><img src="images/PhotoThumbs/14.jpg" alt=""
-            /></a>
-            <h3>Hot Pan!</h3>
-            <p>A chef lights it up at Gilroy Garlic Festival, California</p>
-          </article>
-        </div>
-        <ul class="actions">
+      <div class="bottom">
+        <!-- Logo -->
+        <ul class="icons">
           <li>
-            <a href="https://www.instagram.com/nicledouxphotos/" class="button"
-              >More Photography</a
+            <img class="coverLogo" src="images/NL_Logo.png" />
+          </li>
+        </ul>
+        <!-- Social Icons -->
+        <ul class="icons">
+          <li>
+            <a
+              href="https://twitter.com/NicholasLedoux5"
+              class="icon brands fa-twitter"
+              ><span class="label">Twitter</span></a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/NicLedoux" class="icon brands fa-github"
+              ><span class="label">Github</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/nicholas-ledoux-2352a625/"
+              class="icon brands fa-linkedin"
+              ><span class="label">Linked In</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://dribbble.com/NicLedoux"
+              class="icon brands fa-dribbble"
+              ><span class="label">Dribbble</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://codepen.io/NicLedoux"
+              class="icon brands fa-codepen"
+              ><span class="label">CodePen</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/nicledouxphotos/"
+              class="icon brands fa-instagram"
+              ><span class="label">Instagram</span></a
             >
           </li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+      <!-- Intro -->
+      <section id="top" class="one dark cover">
+        <div class="container">
+          <header>
+            <h2 class="alt">
+              Hi! I'm <strong>Nic</strong>, <br />a full-stack web developer.
+            </h2>
+            <p>
+              I use HTML, CSS and JavaScript to build responsive and beautiful
+              websites.
+            </p>
+          </header>
+
+          <footer>
+            <a href="#contact" class="button scrolly">Contact Me</a>
+          </footer>
+        </div>
       </section>
 
-      <!-- Three -->
-      <section class="three" id="messageMe">
-        <h2>Get In Touch</h2>
-        <p>
-          Like the site? Have a question? Want to get in touch? Send me a
-          message below.
-        </p>
-        <div class="row">
-          <div class="col-8 col-12-small">
-            <form
-              method="post"
-              name="message"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-            >
-              <div class="row gtr-uniform gtr-50">
-                <div class="col-6 col-12-xsmall">
-                  <input type="text" name="name" id="name" placeholder="Name" />
-                </div>
-                <div class="col-6 col-12-xsmall">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="col-12">
-                  <textarea
-                    name="message"
-                    id="message"
-                    placeholder="Message"
-                    rows="4"
-                  ></textarea>
-                </div>
+      <!-- Portfolio -->
+      <section id="portfolio" class="two">
+        <div class="container">
+          <header>
+            <h2>Portfolio</h2>
+          </header>
 
-                <div class="col-12 hidden">
-                  <textarea
-                    name="bot-field"
-                    id="botman"
-                    placeholder="Shhh.... Don’t fill this out if you’re human."
-                    rows="4"
-                  ></textarea>
-                </div>
-              </div>
-              <div class="col-12 submit">
-                <ul class="actions">
-                  <li><input type="submit" value="Send Message" /></li>
-                </ul>
-              </div>
-            </form>
-          </div>
-          <div class="col-4 col-12-small">
-            <ul class="labeled-icons">
-              <li>
-                <h3 class="icon solid fa-home">
-                  <span class="label">Address</span>
-                </h3>
-                Located in Flagstaff, AZ
-              </li>
-              <!-- <li>
-                <h3 class="icon solid fa-envelope">
-                  <span class="label">Email</span>
-                </h3>
-                <a href="mailto:/.netlify/functions/mail/">Send me an email</a>
-              </li> -->
-            </ul>
+          <p>
+            Here are some projects I've been working on. Take a look around,
+            stay a while. If you see something you like,
+            <a href="#contact">let me know</a>.
+          </p>
+
+          <div class="row">
+            <div class="col-4 col-12-mobile">
+              <article class="item">
+                <a
+                  href="assets/portfolio/photography/index.html"
+                  class="image fit"
+                  ><img src="images/thumbs/photography.jpg" alt=""
+                /></a>
+                <header>
+                  <h3>Landscape Photography Wall</h3>
+                </header>
+              </article>
+              <article class="item">
+                <a
+                  href="assets/portfolio/LevelGround/index.html"
+                  class="image fit"
+                  ><img src="images/thumbs/LevelGround.jpg" alt=""
+                /></a>
+                <header>
+                  <h3>Level Ground with floats only</h3>
+                </header>
+              </article>
+            </div>
+            <div class="col-4 col-12-mobile">
+              <article class="item">
+                <a
+                  href="assets/portfolio/FurnitureWorld/index.html"
+                  class="image fit"
+                  ><img src="images/thumbs/pic04.jpg" alt=""
+                /></a>
+                <header>
+                  <h3>Furniture World Emailer</h3>
+                </header>
+              </article>
+
+              <article class="item">
+                <a
+                  href="assets/portfolio/NASA_apod/index.html"
+                  class="image fit"
+                  ><img src="images/thumbs/NASA.jpg" alt=""
+                /></a>
+                <header>
+                  <h3>NASA Picture of the Day Web App</h3>
+                </header>
+              </article>
+            </div>
+            <div class="col-4 col-12-mobile">
+              <article class="item">
+                <a href="assets/portfolio/wow/index.html" class="image fit"
+                  ><img src="images/thumbs/wow.jpg" alt=""
+                /></a>
+                <header>
+                  <h3>Owen Wilson's Wow! Web App</h3>
+                </header>
+              </article>
+              <article class="item">
+                <a
+                  href="assets/portfolio/CocktailSearchApp/index.html"
+                  class="image fit"
+                  ><img src="images/thumbs/CocktailApp.jpg" alt=""
+                /></a>
+                <header>
+                  <h3>Cocktail Recipe Search</h3>
+                </header>
+              </article>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- Footer -->
-        <footer id="footer">
-          <div class="inner">
-            <div class="logo"></div>
-            <ul class="icons">
-              <li>
-                <img
-                  class="coverLogo"
-                  src="images/logo/transparentCover_small.png"
-                />
-              </li>
-            </ul>
-            <ul class="icons">
-              <li>
-                <a
-                  href="https://twitter.com/NicholasLedoux5"
-                  class="icon brands fa-twitter"
-                  ><span class="label">Twitter</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/NicLedoux"
-                  class="icon brands fa-github"
-                  ><span class="label">Github</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/nicholas-ledoux-2352a625/"
-                  class="icon brands fa-linkedin"
-                  ><span class="label">Linked In</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://dribbble.com/NicLedoux"
-                  class="icon brands fa-dribbble"
-                  ><span class="label">Dribbble</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://codepen.io/NomNom1532"
-                  class="icon brands fa-codepen"
-                  ><span class="label">Dribbble</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/nicledouxphotos/"
-                  class="icon brands fa-instagram"
-                  ><span class="label">Instagram</span></a
-                >
-              </li>
-            </ul>
-            <ul class="copyright">
-              <li>&copy; 2022 NicLedoux.com</li>
-              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-          </div>
-        </footer>
+      <!-- About Me -->
+      <section id="about" class="three">
+        <div class="container">
+          <header>
+            <h2>About Me</h2>
+          </header>
 
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.poptrox.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+          <a href="#" class="image featured"
+            ><img src="images/pic08_Mesa.jpg" alt=""
+          /></a>
+
+          <p>
+            I started out developing websites with GeoCities and Angelfire back
+            in High School. After graduating I did a stint in the Army where I
+            found my love for cooking and travel. I went on to culinary school,
+            worked as a chef, and managed several restaurants over the years
+            before finding my way back to web development. I now develop email
+            marketing campaigns for a retail-focused magazine using HTML and
+            CSS. And of course, I freelance as a full-stack web developer.
+          </p>
+
+          <p>
+            I also like to dabble in a bit of photography. You can see some of
+            my work
+            <a href="https://www.instagram.com/nicledouxphotos/">here</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="four">
+        <div class="container">
+          <header>
+            <h2>Contact</h2>
+          </header>
+
+          <p>
+            Thanks for visiting my portfolio site. If you have any questions,
+            need a site developed, or just want to say hi, message me below, or
+            email me at
+            <a href="mailto:contact@nicledoux.com">contact@nicledoux.com</a>
+          </p>
+
+          <form
+            method="post"
+            name="message"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="https://NicLedoux.com/"
+          >
+            <div class="row">
+              <div class="col-6 col-12-mobile">
+                <input type="text" name="name" placeholder="Name" />
+              </div>
+              <div class="col-6 col-12-mobile">
+                <input type="text" name="email" placeholder="Email" />
+              </div>
+              <div class="col-12">
+                <textarea name="message" placeholder="Message"></textarea>
+              </div>
+              <div class="col-12 hidden">
+                <textarea
+                  name="bot-field"
+                  id="botman"
+                  placeholder="Shhh.... Don’t fill this out if you’re human."
+                  rows="4"
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <input type="submit" value="Send Message" />
+              </div>
+            </div>
+          </form>
+        </div>
       </section>
     </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <!-- Copyright -->
+      <ul class="copyright">
+        <li>&copy; 2022 Nic Ledoux. All rights reserved.</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

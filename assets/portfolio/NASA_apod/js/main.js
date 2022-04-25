@@ -1,15 +1,43 @@
-//Example fetch using pokemonapi.co
 document.querySelector("button").addEventListener("click", getFetch);
 
 function getFetch() {
   const choice = document.querySelector("input").value;
   console.log(choice);
-  document.getElementById("displayDate").innerHTML = `${choice}`;
+
+  // const date = new Date(data.date);
+  // console.log(data.date);
+  // const dateOptions = {
+  //   weekday: "long",
+  //   year: "numeric",
+  //   month: "long",
+  //   day: "numeric",
+  // };
+
+  // const formattedDate = date.toLocaleDateString("en-US", dateOptions);
+
+  // document.getElementById("displayDate").innerHTML = date.toLocaleDateString(
+  //   "en-US",
+  //   dateOptions
+  // );
   const url = `https://api.nasa.gov/planetary/apod?api_key=EbqV3DuusLFCylIAoYWB9jeekfGJm4xitpvCA2u7&date=${choice}`;
 
   fetch(url)
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
+      const date = new Date(data.date);
+      console.log(data.date);
+      const dateOptions = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC",
+      };
+
+      const formattedDate = date.toLocaleDateString("en-US", dateOptions);
+
+      document.getElementById("displayDate").innerHTML =
+        date.toLocaleDateString("en-US", dateOptions);
       document.querySelector("img").classList.remove("hidden");
       console.log(data);
       document.getElementById("title").innerText = data.title;
