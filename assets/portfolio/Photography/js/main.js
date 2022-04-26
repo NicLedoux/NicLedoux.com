@@ -17,12 +17,21 @@ fetch(
         const li = document.createElement("li");
         const a = document.createElement("a");
         const img = document.createElement("img");
+        const div = document.createElement("div");
         li.setAttribute("class", "imageLI");
         img.setAttribute("src", data[i].urls.regular);
-        a.setAttribute("href", data[i].links.html);
+        a.setAttribute(
+          "href",
+          data[i].links.html +
+            "?utm_source=NicLedouxPortfolio&utm_medium=referral"
+        );
+
         a.setAttribute(
           "title",
-          data[i].user.first_name + " " + data[i].user.last_name
+          "Photo by Unsplash User " +
+            data[i].user.first_name +
+            " " +
+            data[i].user.last_name
         );
         list.appendChild(ul);
         ul.appendChild(li);

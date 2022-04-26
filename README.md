@@ -1,5 +1,4 @@
-# NicLedoux.com
- This is my portfolio website
+<img src="https://i.imgur.com/fdT3l2r.jpg" width="100%">
 
 👋 Hi, I’m @NicLedoux
 
