@@ -11,6 +11,10 @@
 NicLedoux.com.code-workspace
 
 
+# Photoshop Files #
+*.psd
+
+
 # Compiled source #
 ###################
 *.com
