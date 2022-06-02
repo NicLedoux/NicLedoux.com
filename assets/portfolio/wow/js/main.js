@@ -51,7 +51,7 @@ function getFetch() {
       ).src = data[0].audio;
 
       const playAudio = () => document.getElementById("audio").play();
-      const myTimeout = setTimeout(playAudio, 1500);
+      const myTimeout = setTimeout(playAudio, 2000);
       // setTimeout("playAudio()", 3000);
       document.querySelector("button").innerText = "Wow me again";
     })
