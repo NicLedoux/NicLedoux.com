@@ -1,7 +1,7 @@
 document.querySelector("button").addEventListener("click", getFetch);
 
 function getFetch() {
-  fetch("https://owen-wilson-wow-api.herokuapp.com/wows/random")
+  fetch("https://owen-wilson-wow-api.onrender.com/wows/random")
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
       console.log(data[0]);
