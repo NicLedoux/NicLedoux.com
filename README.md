@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/fdT3l2r.jpg" width="100%">
+<img src="https://nicledoux.com/images/pic08_Mesa.jpg">
 
 👋 Hi, I’m @NicLedoux
 
