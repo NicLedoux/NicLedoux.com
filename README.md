@@ -1,4 +1,4 @@
-<img src="https://nicledoux.com/images/pic08_Mesa.jpg">
+<img src="https://nicledoux.com/images/pic09_cholla.jpg">
 
 👋 Hi, I’m @NicLedoux
 
