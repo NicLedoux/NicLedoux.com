@@ -1,71 +1,72 @@
-document.querySelector("button").addEventListener("click", getFetch);
+const API_KEY = "DEMO_KEY";
+const BASE_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
+
+const dateOptions = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "UTC",
+};
+
+function renderMedia(data) {
+  document.getElementById("title").innerText = data.title;
+  document.getElementById("displayDate").innerText = new Date(
+    data.date,
+  ).toLocaleDateString("en-US", dateOptions);
+  document.querySelector("p").innerText = data.explanation;
+
+  if (data.media_type === "image") {
+    document.querySelector("img").classList.remove("hidden");
+    document.querySelector("a").classList.remove("hidden");
+    document.querySelector("a").href = data.hdurl;
+    document.querySelector("img").src = data.url;
+    document.getElementById("iframeContainer").classList.add("hidden");
+  } else if (data.media_type === "video") {
+    document.querySelector("img").classList.add("hidden");
+    document.querySelector("a").classList.add("hidden");
+    document.getElementById("iframeContainer").classList.remove("hidden");
+    document.querySelector("iframe").src = data.url;
+    document.querySelector("small").classList.add("hidden");
+  } else {
+    document.querySelector("img").classList.add("hidden");
+    document.querySelector("a").classList.add("hidden");
+    document.getElementById("iframeContainer").classList.add("hidden");
+    document.querySelector("small").classList.add("hidden");
+    document.querySelector("p").innerText =
+      "This archive entry contains legacy media that can't be displayed. " +
+      data.explanation;
+  }
+
+  if (data.copyright != null) {
+    const mediaLabel = data.media_type === "video" ? "Video" : "Photo";
+    document.querySelector("small").classList.remove("hidden");
+    document.querySelector("small").innerText =
+      `${mediaLabel} by ${data.copyright}`;
+  }
+}
+
+function todaysPic() {
+  fetch(BASE_URL)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      document.getElementById("datePicker").valueAsDate = new Date();
+      renderMedia(data);
+    })
+    .catch((err) => console.log(`error ${err}`));
+}
 
 function getFetch() {
   const choice = document.querySelector("input").value;
-  console.log(choice);
-
-  // const date = new Date(data.date);
-  // console.log(data.date);
-  // const dateOptions = {
-  //   weekday: "long",
-  //   year: "numeric",
-  //   month: "long",
-  //   day: "numeric",
-  // };
-
-  // const formattedDate = date.toLocaleDateString("en-US", dateOptions);
-
-  // document.getElementById("displayDate").innerHTML = date.toLocaleDateString(
-  //   "en-US",
-  //   dateOptions
-  // );
-  const url = `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${choice}`;
-
-  fetch(url)
-    .then((res) => res.json()) // parse response as JSON
+  fetch(`${BASE_URL}&date=${choice}`)
+    .then((res) => res.json())
     .then((data) => {
-      const date = new Date(data.date);
-      console.log(data.date);
-      const dateOptions = {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        timeZone: "UTC",
-      };
-
-      const formattedDate = date.toLocaleDateString("en-US", dateOptions);
-
-      document.getElementById("displayDate").innerHTML =
-        date.toLocaleDateString("en-US", dateOptions);
-      document.querySelector("img").classList.remove("hidden");
       console.log(data);
-      document.getElementById("title").innerText = data.title;
-      if (data.media_type === "image") {
-        document.querySelector("img").classList.remove("hidden");
-        document.querySelector("a").classList.remove("hidden");
-        document.querySelector("a").href = data.hdurl;
-        document.querySelector("img").src = data.url;
-        document.querySelector("iframe").classList.add("hidden");
-      } else if (data.media_type === "video") {
-        document.querySelector("img").classList.add("hidden");
-        document.querySelector("iframe").classList.remove("hidden");
-        document.querySelector("iframe").src = data.url;
-        document.querySelector("a").classList.add("hidden");
-        document.querySelector("small").classList.add("hidden");
-      }
-      document.querySelector("p").innerText = data.explanation;
-      if (data.copyright != null && data.media_type === "image") {
-        document.querySelector("small").classList.remove("hidden");
-        let copyright = data.copyright;
-        document.querySelector("small").innerText = `Photo by ${copyright}`;
-      } else if (data.copyright != null && data.media_type === "video") {
-        document.querySelector("small").classList.remove("hidden");
-        let copyright = data.copyright;
-        document.querySelector("small").innerText = `Video by ${copyright}`;
-      }
+      renderMedia(data);
     })
-    .catch((err) => {
-      console.log(`error ${err}`);
-    });
+    .catch((err) => console.log(`error ${err}`));
 }
+
+document.querySelector("button").addEventListener("click", getFetch);
+document.addEventListener("DOMContentLoaded", todaysPic);
