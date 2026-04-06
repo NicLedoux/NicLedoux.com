@@ -1,7 +1,5 @@
 # Local Netlify folder
-.netlify
-!.netlify/functions/
-!.netlify/functions/**
+
 .env
 #Local GitIgnore File
 .gitignore
