@@ -3,6 +3,8 @@
 .env
 #Local GitIgnore File
 .gitignore
+# Local NASA API Key
+config.js
 #not sure
 .DS_Store
 *.DS_Store
