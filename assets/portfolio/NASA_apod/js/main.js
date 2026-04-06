@@ -69,7 +69,7 @@ function todaysPic() {
 
 function getFetch() {
   const choice = document.querySelector("input").value;
-  fetch(`${BASE_URL}&date=${choice}`)
+  fetch(`${BASE_URL}?date=${choice}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
