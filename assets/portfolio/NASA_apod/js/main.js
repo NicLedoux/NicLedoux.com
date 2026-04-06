@@ -1,5 +1,4 @@
-const API_KEY = NASA_API_KEY;
-const BASE_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
+const BASE_URL = "/api/apod";
 
 const dateOptions = {
   weekday: "long",
