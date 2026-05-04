@@ -22,13 +22,17 @@
       <h2 id="title"></h2>
     </section>
     <a href="#"><img src="" alt="" id="apod" /></a>
+    <div id="videoContainer" class="hidden">
+      <video controls>
+        <source id="videoSource" src="" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <p id="videoError" class="hidden">
+        Video blocked by browser extension. <a id="videoDirectLink" href="#" target="_blank" rel="noopener">Open video
+          directly ↗</a>
+      </p>
+    </div>
     <div id="iframeContainer" class="hidden">
-      <div id="videoContainer" class="hidden">
-        <video controls>
-          <source id="videoSource" src="" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
       <iframe allow="fullscreen" class="iframe" src="" frameborder="0"></iframe>
     </div>
     <small class="hidden"></small>
