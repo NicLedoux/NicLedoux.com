@@ -8,6 +8,16 @@ const dateOptions = {
   timeZone: "UTC",
 };
 
+function resetVideo() {
+  const videoEl = document.querySelector("video");
+  videoEl.pause();
+  videoEl.src = "";
+  document.getElementById("videoSource").src = "";
+  videoEl.load();
+  document.getElementById("videoContainer").classList.add("hidden");
+  document.getElementById("videoError").classList.add("hidden");
+}
+
 function renderMedia(data) {
   document.getElementById("title").innerText = data.title;
   document.getElementById("displayDate").innerText = new Date(
@@ -16,6 +26,7 @@ function renderMedia(data) {
   document.getElementById("description").innerText = data.explanation;
 
   if (data.media_type === "image") {
+    resetVideo();
     document.querySelector("img").classList.remove("hidden");
     document.querySelector("a").classList.remove("hidden");
     document.querySelector("a").href = data.hdurl;
@@ -30,11 +41,17 @@ function renderMedia(data) {
       //hides iframe container if direct video file and shows video container.
       document.getElementById("iframeContainer").classList.add("hidden");
       document.querySelector("iframe").src = "";
+      document.getElementById("videoError").classList.add("hidden");
+      document.getElementById("videoDirectLink").href = data.url;
       document.getElementById("videoSource").src = data.url;
-      document.querySelector("video").load();
+      const videoEl = document.querySelector("video");
+      videoEl.load();
+      videoEl.onerror = () => {
+        document.getElementById("videoError").classList.remove("hidden");
+      };
       document.getElementById("videoContainer").classList.remove("hidden");
     } else {
-      document.getElementById("videoContainer").classList.add("hidden");
+      resetVideo();
       document.getElementById("iframeContainer").classList.remove("hidden");
       document.querySelector("iframe").src = data.url;
     }
@@ -43,7 +60,7 @@ function renderMedia(data) {
     document.querySelector("a").classList.add("hidden");
     document.getElementById("iframeContainer").classList.add("hidden");
     document.querySelector("small").classList.add("hidden");
-    document.querySelector("p").innerText =
+    document.getElementById("description").innerText =
       "This archive entry contains legacy media that can't be displayed. " +
       data.explanation;
   }
