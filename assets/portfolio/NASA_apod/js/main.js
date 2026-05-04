@@ -13,7 +13,7 @@ function renderMedia(data) {
   document.getElementById("displayDate").innerText = new Date(
     data.date,
   ).toLocaleDateString("en-US", dateOptions);
-  document.querySelector("p").innerText = data.explanation;
+  document.getElementById("description").innerText = data.explanation;
 
   if (data.media_type === "image") {
     document.querySelector("img").classList.remove("hidden");
