@@ -56,6 +56,7 @@ function renderMedia(data) {
       document.querySelector("iframe").src = data.url;
     }
   } else {
+    resetVideo();
     document.querySelector("img").classList.add("hidden");
     document.querySelector("a").classList.add("hidden");
     document.getElementById("iframeContainer").classList.add("hidden");
